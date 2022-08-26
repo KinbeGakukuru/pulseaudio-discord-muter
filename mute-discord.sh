@@ -27,7 +27,7 @@ DISCORD_PACTL_OUTPUT_IDX=`pactl list source-outputs | awk -v RS='Source Output #
     # This works by setting AWK's "Record Separator" (RS) to be delimited by regex "Source Output #" instead
     # of the normal carriage return (\n), thereby allowing an entire output listing to be considered a single
     # record.  As it is the Record Separator, "Source Output #" is removed from all output.
-    # We then simply search for the record containing regex "Discord" and print the first field; the 
+    # We then simply search for the record containing regex "Discord" and print the first field; the index number.
 
 if [ $DISCORD_PACTL_OUTPUT_IDX -gt 0 ] 2> /dev/null ; then
     pactl set-source-output-mute $DISCORD_PACTL_OUTPUT_IDX toggle ;
